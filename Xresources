@@ -1,0 +1,116 @@
+! author: arpinux <https://arpinux.org>
+! ~/.Xresources configuration file
+!-----------------------------------------------------------------------
+
+! nord inspired colors
+! black
+*color0:  #3B4252
+*color8:  #4C566A
+! red
+*color1:  #BF616A
+*color9:  #CF6973
+! green
+*color2:  #A3BE8C
+*color10: #B1CF98
+! yellow
+*color3:  #EBCB8B
+*color11: #FAD894
+! blue
+*color4:  #81A1C1
+*color12: #5E81AC
+! purple
+*color5:  #B48EAD
+*color13: #C49BBD
+! cyan
+*color6:  #8FBCBB
+*color14: #88C0D0
+! white
+*color7:  #E5E9F0
+*color15: #ECEFF4
+
+*background:  #2E3440
+*foreground:  #D8DEE9
+*fading:      40
+*fadeColor:   #4C566A
+*cursorColor: #D8DEE9
+*colorUL:     #A3BE8C
+
+! Xcursor settings -----------------------------------------------------
+Xcursor.theme: Nordzy-dark-cursor
+Xcursor.size:  24
+
+! Xft settings ---------------------------------------------------------
+Xft.dpi:       96
+Xft.autohint:  0
+Xft.lcdfilter: lcddefault
+Xft.antialias: 1
+Xft.rgba:      rgb
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+
+! urxvt ----------------------------------------------------------------
+URxvt.termName: rxvt-unicode
+URxvt.imLocale: fr_FR.UTF-8
+URxvt.saveLines: 5000
+URxvt.cursorBlink: true
+URxvt.foreground: #d8dee9
+URxvt.background: #2e3440
+URxvt.cursorColor: #d8dee9
+URxvt.throughColor: #4c566a
+URxvt.highlightColor: #4c566a
+URxvt.shading: 60
+URxvt.transparent: false
+URxvt.tintColor: #5e81ac
+URxvt.visualBell: false
+URxvt.urgentOnBell: true
+URxvt.font: xft:Hack:regular:size=9,xft:InconsolataNerdFontMono-Regular:size=12
+URxvt.boldfont: xft:Hack:bold:size=9,xft:InconsolataNerdFontMono-Bold:size=12
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.url-launcher: xdg-open
+URxvt.matcher.button: 1
+URxvt.perl-ext: default,matcher
+!URxvt.perl-ext: default,tabbed,matcher !uncomment = autotabs in URxvt
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 7
+URxvt.tabbed.tab-bg: 4
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! xterm ----------------------------------------------------------------
+xterm*saveLines:      4096
+xterm*AllowIconInput: on
+xterm*background:     #2E3440
+xterm*foreground:     #D8DEE9
+xterm*border:         #D8DEE9
+xterm*faceName:       Hack
+xterm*Font:           Hack
+xterm*allowBoldFonts: false
+xterm*renderFont:     true
+xterm*faceSize:       9
+xterm*InternalBorder: 0
+xterm*MarginBell:     off
+xterm*MenuFont:       fixed8
+xterm*Mouse:          yellow
+xterm*TitleFont:      vtbold
+xterm*charClass:      33:48,37:48,45-47:48,64:48
+xterm*colorAttrMode:  true
+xterm*colorULMode:    true
+!xterm*colorUL:       green
+xterm*curses:         on
+xterm*cutNewline:     off
+xterm*jumpScroll:     on
+xterm*multiClickTime: 500
+xterm*multiScroll:    on
+xterm*reverseWrap:    off
+xterm*scrollBar:      off
+xterm*reverseVideo:   off
+xterm*VT100.Translations: #override \
+    Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+    Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+!eof ------------------------------------------------------------------
