@@ -1,0 +1,6 @@
+[exec] (ARandR) {arandr} <>
+[exec] (Connman Settings) {connman-gtk} <>
+[exec] (Customize Look and Feel) {lxappearance} <>
+[exec] (LightDM GTK+ Greeter settings) {lightdm-gtk-greeter-settings-pkexec} <>
+[exec] (Power Manager) {xfce4-power-manager-settings} <>
+[exec] (PulseAudio Volume Control) {pavucontrol} <>

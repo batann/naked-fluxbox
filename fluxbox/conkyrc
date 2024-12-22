@@ -1,0 +1,96 @@
+--[[
+  fluxbox conkyrc 3hg @ 2017-2023 © WTFPL
+  set own_window_type from 'desktop' to 'override' to use in i3wm
+]]
+
+conky.config = {
+  background = true,
+  use_xft = true,
+  font = 'Hack:pixelsize=12',
+  xftalpha = 1,
+  update_interval = 1.0,
+  total_run_times = 0,
+  own_window = true,
+  own_window_transparent = false,
+  own_window_colour = '2e3440',
+  own_window_type = 'desktop',
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  own_window_class = 'conky',
+  own_window_title = 'conky_flux',
+  own_window_argb_visual = true,
+  own_window_argb_value = 220,
+  double_buffer = true,
+  maximum_width = 150,
+  minimum_width = 150,
+  draw_shades = false,
+  draw_outline = false,
+  draw_borders = false,
+  border_inner_margin = 5,
+  border_width = 1,
+  draw_graph_borders = false,
+  default_color = 'd8dee9',
+  color1 = 'eceff4',
+  color2 = 'ababab',
+  color3 = '7d7d7d',
+  color4 = '5e81ac',
+  default_shade_color = 'black',
+  default_outline_color = 'white',
+  alignment = 'tr',
+  gap_x = 15,
+  gap_y = 15,
+  no_buffers = true,
+  uppercase = false,
+  text_buffer_size = 1024,
+  top_name_width = 10,
+  imlib_cache_size = 0,
+  cpu_avg_samples = 2,
+  show_graph_scale = false,
+  show_graph_range = false,
+  short_units = true,
+  override_utf8_locale = true,
+  use_spacer = 'none',
+  if_up_strictness = 'address'
+}
+
+conky.text = [[
+${alignc}${font Hack:pixelsize=14}*^- nakeDeb -^*${font}
+${color1}${time %I:%M}\
+${alignr}${time %d/%m}${color}
+${alignc}${texeci 3600 nakedupdate -c}
+${voffset 5}${color4}${font forkawesome:pixelsize=16}${voffset -3}${font}${hr 1}${color}
+${voffset 5}CPU ${color1}${cpu}${color}%\
+${alignr}${cpugraph 10,75 ebcb8b bf616a -t}${color}
+${alignc}${loadavg 1} ${color2}${loadavg 2} ${color3}${loadavg 3}
+${color} name${alignr}%cpu 
+${color1}${top name 1}${alignr}${top cpu 1}%${color}
+${color2}${top name 2}${alignr}${top cpu 2}%${color}
+${color3}${top name 3}${alignr}${top cpu 3}%${color}
+${voffset 5}${color4}${font forkawesome:pixelsize=14}${voffset -2}${font}${hr 1}${color}
+${voffset 5}RAM ${color1}${memperc}${color}%\
+${alignr}SWAP ${color1}${swapperc}${color}%
+used${color1} ${mem} ${color}${alignr}max${color1} ${memmax}${color}
+ name${alignr}%ram 
+${color1}${top_mem name 1}${alignr}${top_mem mem 1}%${color}
+${color2}${top_mem name 2}${alignr}${top_mem mem 2}%${color}
+${color3}${top_mem name 3}${alignr}${top_mem mem 3}%${color}
+${voffset 5}${color4}${font forkawesome:pixelsize=16}${voffset -4}${font}${hr 1}${color}
+${voffset 5}SYS ${color1}${fs_used_perc /}${color}%${alignr}${fs_used /}/${fs_size /}
+I/O ${color1}${diskio}${color}\
+${alignr}${diskiograph 10,80 2e3440 a3be8c}
+${voffset 5}${color4}${font forkawesome:pixelsize=18}${voffset -4}${font}${hr 1}${color}
+${voffset 5}help?? $alignr 'nakedhelp'
+Alt+m$alignr fluxmenu
+Alt+d$alignr rofi-menu
+Alt+p$alignr popmenu
+Alt+F2$alignr fbrun
+Alt+Enter$alignr terminal
+Super+Enter$alignr terminal
+Super+w$alignr browser
+Super+r$alignr filer
+Super+Shift+r$alignr pcmanfm
+Super+e$alignr geany
+Super+x$alignr irc client
+Super+v$alignr volume
+${alignc}${color4}${font forkawesome:pixelsize=26}${font}
+
+]]

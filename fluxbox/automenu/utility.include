@@ -1,0 +1,9 @@
+[exec] (Archive Manager) {file-roller } <>
+[exec] (Disks) {gnome-disks} <>
+[exec] (dotCleaner) {/usr/bin/dotcleaner} <>
+[exec] (KeePassXC) {keepassxc } <>
+[exec] (nakedHelp) {/usr/bin/nakedhelp} <>
+[exec] (nakedLocate) {/usr/bin/nakedlocate} <>
+[exec] (nakedQuit) {/usr/bin/nakedquit} <>
+[exec] (nakedWalls) {/usr/bin/nakedwalls} <>
+[exec] (Rxvt Color Unicode Terminal) {urxvt} <>

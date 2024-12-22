@@ -1,0 +1,6 @@
+[exec] (bashMount) {xterm -geometry 120x40+10+10 -e bashmount} <>
+[exec] (GParted) {/usr/sbin/gparted } <>
+[exec] (Htop) {xterm -geometry 120x40+10+10 -e htop} <>
+[exec] (UXTerm) {uxterm} <>
+[exec] (XTerm) {xterm} <>
+[exec] (zuluCrypt) {/usr/bin/zuluCrypt-gui -d } <>

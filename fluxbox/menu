@@ -1,0 +1,112 @@
+# nakedeb fluxbox menu -------------------------------------------------
+#----------------------------------------------------------------- start
+[begin] (*^- nakeDeb -^*)
+#------------------------------------------------------------ usual apps
+#[exec] (Run command) {fbrun}
+[exec] (Terminal) {urxvtc}
+[exec] (Filer (GUI\)) {pcmanfm}
+[exec] (Filer (CLI\)) {urxvtc -e lf}
+[exec] (Tor Browser) {torbrowser-launcher}
+[separator]
+#----------------------------------------------------------------- menus
+[submenu] (Applist) {Categories}
+    [include] (~/.fluxbox/automenu/auto.menu)
+[end]
+#[submenu] (Debian menu) {}
+#    [include] (/etc/X11/fluxbox/fluxbox-menu)
+#[end]
+[separator]
+#------------------------------------------------------------------ apps
+[submenu] (Applications)
+    [exec] (Terminal) {urxvtc}
+    [exec] (PcmanFM) {pcmanfm}
+    [exec] (Lf) {urxvtc -e lf}
+    [exec] (CLI Browser) {nakedbrowser}
+    [exec] (TOR Browser) {torbrowser-launcher}
+    #[exec] (Vim Editor) {urxvtc -name editor -e vim $HOME}
+    [exec] (GUI Editor) {geany}
+    [exec] (IRC client) {urxvtc -name irc -e weechat-curses}
+    [exec] (Music player) {urxvtc -name player -e mocp}
+    [exec] (Search) {nakedlocate}
+[end]
+#---------------------------------------------------------------- config
+[submenu] (Configuration)
+    [submenu] (Fluxbox) {}
+        [config] (Fluxbox config)
+        [submenu] (Fluxbox styles) {}
+            [stylesdir] (/usr/share/fluxbox/styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [submenu] (Edit Fluxbox files)
+            [wallpapers] (~/.fluxbox) {urxvtc -name editor -e nano}
+        [end]
+        [reconfig] (Reconfigure)
+        [restart] (Restart)
+    [end]
+    [exec] (Interface) {lxappearance}
+    #[exec] (Wallpapers) {nakedwalls}
+    [submenu] (Wallpapers)
+        [submenu] (system walls)
+            [wallpapers] (/usr/share/backgrounds) {feh --bg-fill}
+        [end]
+        [exec] (Random wall) {feh -z --bg-fill /usr/share/backgrounds}
+    [end]
+    [exec] (Sound) {urxvtc -name sound -e alsamixer}
+    [exec] (Display) {arandr}
+    [exec] (Power) {xfce4-power-manager-settings}
+    [submenu] (Conky) {}
+        [exec] (Edit conky) {urxvtc -name editor -e nano ~/.fluxbox/conkyrc}
+        [exec] (Start conky) {conky -c ~/.fluxbox/conkyrc}
+        [exec] (Stop conky) {killall conky}
+        [exec] (Man conky) {urxvtc -e man conky}
+    [end]
+[end]
+#----------------------------------------------------------------- tools
+[submenu] (Tools)
+    [exec] (bashMount) {urxvtc -name bashmount -e bashmount}
+    [exec] (Neofetch) {xterm -g 90x25 -e "neofetch;$SHELL"}
+    [exec] (Inxi full) {xterm -g 100x28 -e "inxi -F;$SHELL"}
+    [exec] (Disk usage) {urxvtc -e gdu /}
+    [exec] (Dotcleaner) {dotcleaner}
+    [exec] (Calculator) {xcalc}
+    [submenu] (screenshot) {}
+        [exec] (shot now) {scrot}
+        [exec] (shot in 5s) {scrot -d 5}
+        [exec] (shot focus in 5s) {scrot -d 5 -u -b}
+        [exec] (shot zone) {scrot -s}
+    [end]
+[end]
+#----------------------------------------------------------------- admin
+[submenu] (Administration)
+    [exec] (Root terminal) {urxvtc -name RootTerm -e pkexec bash}
+    [exec] (Login) {lightdm-gtk-greeter-settings-pkexec}
+    [exec] (WiFi config) {connman-gtk}
+    [exec] (Keyboard) {urxvtc -e sudo dpkg-reconfigure keyboard-configuration}
+    [exec] (Locales) {urxvtc -e sudo dpkg-reconfigure locales}
+    [exec] (Disk utils) {gnome-disks}
+    [exec] (Partition manager) {pkexec /usr/sbin/gparted}
+    [exec] (Password manager) {keepassxc}
+    [exec] (ZuluCrypt) {zuluCrypt-gui}
+[end]
+#------------------------------------------------------------------- wms
+[submenu] (Other WMs) {}
+    [restart] (i3wm)  {/usr/bin/i3}
+[end]
+#-------------------------------------------------------------- aide/doc
+[submenu] (Help/Wiki)
+    [exec] (Fluxbox man) {urxvtc -e man fluxbox}
+    [exec] (Fluxbox wiki) {xterm -g 110x30 -e w3m http://fluxbox.org/help/}
+    [exec] (nakedHelp) {nakedhelp}
+[end]
+[separator]
+#------------------------------------------------------------------ exit
+[exec] (Exit) {nakedquit}
+#[submenu] (Exit)
+#    [exec] (Lock) {nakedquit lock}
+#    [exit] (Logout)
+#    [exec] (Suspend) {systemctl suspend}
+#    [exec] (Reboot) {systemctl reboot}
+#    [exec] (Shutdown) {systemctl poweroff}
+#[end]
+#------------------------------------------------------------------- end
+[end]

@@ -1,0 +1,14 @@
+[app] (name=fbrun)
+  [Position]	(Center)	{0 0}
+  [Deco]	{Tool}
+  [Layer]	{2}
+  [Dimension]	{90 10}
+[end]
+[app] (class=XTerm)
+  [Position]	(Center)	{0 0}
+[end]
+[app] (class=Xmessage)
+  [Position]	(Center)	{0 0}
+  [Deco]	{Border}
+  [Layer]	{2}
+[end]

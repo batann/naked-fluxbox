@@ -1,0 +1,30 @@
+[submenu] (Utility)
+[include] (/home/batan/.fluxbox/automenu/utility.include)
+[end]
+[submenu] (Graphics)
+[include] (/home/batan/.fluxbox/automenu/graphics.include)
+[end]
+[submenu] (Network)
+[include] (/home/batan/.fluxbox/automenu/network.include)
+[end]
+[submenu] (office)
+[include] (/home/batan/.fluxbox/automenu/office.include)
+[end]
+[submenu] (Multimedia)
+[include] (/home/batan/.fluxbox/automenu/multimedia.include)
+[end]
+[submenu] (Games)
+[include] (/home/batan/.fluxbox/automenu/game.include)
+[end]
+[submenu] (Development)
+[include] (/home/batan/.fluxbox/automenu/development.include)
+[end]
+[submenu] (Settings)
+[include] (/home/batan/.fluxbox/automenu/settings.include)
+[end]
+[submenu] (System)
+[include] (/home/batan/.fluxbox/automenu/system.include)
+[end]
+[submenu] (Other)
+[include] (/home/batan/.fluxbox/automenu/other.include)
+[end]
